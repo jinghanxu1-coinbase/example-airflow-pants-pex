@@ -1,0 +1,14 @@
+apache-airflow==2.1.2
+apache-airflow-providers-amazon==2.1.0
+apache-airflow-providers-postgres==2.1.0
+werkzeug==1.0.1
+redis==3.2.0
+celery==4.2.0
+psycopg2-binary
+tornado==5.1.1
+flower
+flask-oauthlib
+authlib
+pyodbc
+datadog
+gunicorn==19.5.0

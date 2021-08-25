@@ -1,0 +1,25 @@
+python_library(
+    name="airflow_cli_lib",
+    dependencies=[
+        "3rdparty/airflow_2:apache-airflow",
+        "3rdparty/airflow_2:celery",
+        "3rdparty/airflow_2:flask-oauthlib",
+        "3rdparty/airflow_2:flower",
+        "3rdparty/airflow_2:psycopg2-binary",
+        "3rdparty/airflow_2:redis",
+        "3rdparty/airflow_2:tornado",
+        "3rdparty/airflow_2:werkzeug",
+        "3rdparty/airflow_2:authlib",
+        "3rdparty/airflow_2:gunicorn",
+    ]
+)
+
+pex_binary(
+    name="airflow_cli",
+    execution_mode="venv",
+    inherit_path="fallback",
+    entry_point="main.py",
+    dependencies=[
+        ":airflow_cli_lib",
+    ]
+)

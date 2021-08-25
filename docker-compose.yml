@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres:
+    image: postgres@sha256:a2e6e6012a9056fa7647df5746119768bdb0bf4e82bb04819d5a8e450968a967
+    ports:
+      - 5432:5432
+  redis:
+    image: redis@sha256:7d1ebef417593273b2f7b137f615393b21723d93568868c7fe5aad0401469152
+  webserver:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - postgres
+      - redis
+    command: webserver
